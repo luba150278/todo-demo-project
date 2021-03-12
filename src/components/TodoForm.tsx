@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 
-const TodoForm: React.FC = () => {
+interface TodoFormProps {
+  onAdd(title: string): void;
+}
+
+const TodoForm: React.FC<TodoFormProps> = (props) => {
   const [title, setTitle] = useState<string>('');
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>): void => setTitle(event.target.value);
   const keyPressHandler = (event: React.KeyboardEvent): void => {
     if (event.key === 'Enter') {
-      // eslint-disable-next-line no-console
-      console.log(title);
+      props.onAdd(title);
     }
   };
   return (
