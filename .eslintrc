@@ -27,7 +27,7 @@
     }
   },
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".ts", "tsx"] }],
     "react/jsx-props-no-spreading": "off",
     "react/button-has-type": "off",
@@ -37,6 +37,7 @@
     "no-useless-constructor": "off",
     "no-empty-function": "off",
     "react/prop-types": "off",
+   // "react/prefer-stateless-function": [0, { "ignorePureComponents": true }], //added rule
     "max-classes-per-file": "off",
     "react/no-unescaped-entities": "off",
     "import/no-unresolved": "off",
